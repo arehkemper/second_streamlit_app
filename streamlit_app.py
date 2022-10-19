@@ -18,7 +18,7 @@ my_catalog = my_cur.fetchall()
 df = pandas.DataFrame(my_catalog)
 
 # temp write the dataframe to the page so I Can see what I am working with
-streamlit.write(df)
+#streamlit.write(df)
 
 # put the first column into a list
 color_list = df[0].values.tolist()
@@ -26,3 +26,6 @@ color_list = df[0].values.tolist()
 
 # Let's put a pick list here so they can pick the color
 option = streamlit.selectbox('Pick a sweatsuit color or style:',list(color_list))
+
+# We'll build the image caption now, since we can
+product_caption = 'Our warm, comfortable, ' + option + ' sweatsuit!'
