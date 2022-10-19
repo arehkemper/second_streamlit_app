@@ -14,9 +14,6 @@ my_cur=my_cnx.cursor()
 my_cur.execute("select color_or_style from catalog_for_website")
 my_catalog = my_cur.fetchall()
 
-# Let's put a pick list here so they can pick the color
-option = streamlit.selectbox('Pick a sweatsuit color or style:',list(color_list))
-
 # put the data into a dataframe
 df = pandas.DataFrame(my_catalog)
 
@@ -26,3 +23,6 @@ streamlit.write(df)
 # put the first column into a list
 color_list = df[0].values.tolist()
 # print(color_list)
+
+# Let's put a pick list here so they can pick the color
+option = streamlit.selectbox('Pick a sweatsuit color or style:',list(color_list))
